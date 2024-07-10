@@ -35,6 +35,7 @@ RUN python -m venv /venv && \
   mkdir -p /data/web/media && \
   chown -R duser:duser /venv /data /djangoapp /scripts && \
   chmod -R 755 /data/web/static /data/web/media /djangoapp /scripts && \
+  chmod +x /scripts/init_volumes.sh && \
   chmod +x /scripts/commands.sh
 
 # Adiciona a pasta scripts e venv/bin 

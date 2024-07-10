@@ -1,5 +1,5 @@
-FROM python:3.11.3-alpine3.18
-LABEL mantainer="luizomf@gmail.com"
+FROM python:3.10.14-alpine3.20
+LABEL mantainer="joxf1994@gmail.com"
 
 # Essa variável de ambiente é usada para controlar se o Python deve 
 # gravar arquivos de bytecode (.pyc) no disco. 1 = Não, 0 = Sim
@@ -37,7 +37,7 @@ RUN python -m venv /venv && \
   chown -R duser:duser /data/web/media && \
   chmod -R 755 /data/web/static && \
   chmod -R 755 /data/web/media && \
-  chmod -R +x /scripts
+  chmod +x /scripts/commands.sh
 
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
@@ -47,4 +47,4 @@ ENV PATH="/scripts:/venv/bin:$PATH"
 USER duser
 
 # Executa o arquivo scripts/commands.sh
-CMD ["commands.sh"]
+CMD ["/scripts/commands.sh"]

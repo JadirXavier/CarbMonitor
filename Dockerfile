@@ -37,10 +37,6 @@ RUN python -m venv /venv && \
   chmod -R 755 /data/web/static /data/web/media /djangoapp /scripts && \
   chmod +x /scripts/commands.sh
 
-
-ENV PATH="/scripts:/venv/bin:$PATH"
-
-
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
 ENV PATH="/scripts:/venv/bin:$PATH"
@@ -49,4 +45,4 @@ ENV PATH="/scripts:/venv/bin:$PATH"
 USER duser
 
 # Executa o arquivo scripts/commands.sh
-CMD ["/scripts/commands.sh"]
+CMD ["/scripts/init_volumes.sh","/scripts/commands.sh"]

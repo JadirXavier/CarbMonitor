@@ -1,9 +1,8 @@
 from django.urls import path
-from carbmonitor.views import index
+from . import views
 
 app_name = 'carbmonitor'
 
 urlpatterns = [
-    path('', index, name="index"),
+    path('', views.index, name='index'),
 ]
-

@@ -136,6 +136,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = DATA_DIR / 'static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'carbmonitor/static/'),
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = DATA_DIR / 'media'
 

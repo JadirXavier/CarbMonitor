@@ -3,33 +3,60 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 p-3">
-            <h1>Carb Counting and Diabetes</h1>
-            <p>Carbohydrates are nutrients found in certain foods such as grains, sweets, starches, legumes, and dairy products. When we consume beverages or foods containing carbohydrates, they are converted into glucose, which enters our bloodstream. This raises blood glucose levels, prompting the body to produce insulin to maintain them within acceptable ranges.</p>
-            <p>For people with diabetes, this process does not function properly.</p>
-            <h2>Type 1 Diabetes</h2>
-            <p>If you have type 1 diabetes, your pancreas produces little or no insulin, which must be administered externally to control blood glucose. To determine the correct amount of insulin to administer, it is important to know how to count the carbohydrates you are ingesting.</p>
-            <h2>Type 2 Diabetes</h2>
-            <p>Since people with type 2 diabetes have insulin resistance, it is important to be aware of carbohydrate intake. To avoid high glucose levels, it is beneficial to maintain a consistent amount of carbohydrates in meals throughout the day rather than consuming them all at once.</p>
-            <p>Therefore, carb counting is a very useful tool for controlling blood glucose levels.</p>
-            <h2>How to Count Carbohydrates</h2>
-            <p>Simply count the grams of carbohydrates in each meal and then apply the correct dose of insulin according to the carbohydrates ingested. This dosage of insulin for correction is known as a meal bolus.</p>
-            <p>To perform the meal bolus correctly, you need to use the insulin-to-carbohydrate ratio. This ratio defines how much carbohydrate one unit of insulin can metabolize. Remember, this factor is unique to each person and should be discussed with a specialist doctor to determine it appropriately.</p>
-            <p>After determining the insulin-to-carbohydrate ratio, you need two other pieces of information for accurate counting: the portion size of the food consumed and the amount of digestible carbohydrates per portion.</p>
-            <h3>Portion Size</h3>
-            <p>This is the amount of food in the meal. It is usually measured in units of weight (grams) but can also be given in pieces, slices, units, cups, etc.</p>
-            <h3>Digestible Carbohydrates</h3>
-            <p>This is the amount of carbohydrates per portion of food that can be digested during the meal. It should not be confused with the total carbohydrates in a food, as these include carbohydrates that are not digestible.</p>
-            <p>All this information can be found in the nutritional information tables on food products. If the product does not have this table, such as fruits and vegetables, there are tools available that provide this information (such as the carbohydrate calculator available on this site!).</p>
-            <h3>References:</h3>
-            <ul>
-                <li><a href="https://diabetes.org/healthy-living/recipes-nutrition/understanding-carbs/carb-counting-and-diabetes">Carb Counting and Diabetes | ADA</a></li>
-                <li><a href="http://www.tbca.net.br/index.html">TBCA - Brazilian Food Composition Table</a></li>
-            </ul>
+{% load static %}
+    <div class="container mt-5">
+        <!-- Seção 1: Introdução -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>Contagem de Carboidratos e Diabetes</h2>
+                <p>Carboidratos são nutrientes encontrados em alimentos como grãos, doces, amidos, legumes e laticínios. Quando ingerimos carboidratos, eles são convertidos em glicose, que entra na corrente sanguínea. Isso eleva o nível de glicose no sangue, e o corpo produz insulina para mantê-lo em níveis aceitáveis. Para pessoas com diabetes, esse processo é disfuncional.</p>
+            </div>
+            <div class="col-md-6">
+                <link href="{% static 'carbmonitor/styles.css' %}" rel="stylesheet">
+                <img src="{% static 'carbmonitor/images/alimentos_ricos_em_carboidratos.jpg' %}" class="img-fluid" alt="Alimentos ricos em carboidratos">
+            </div>
+        </div>
+        <!-- Seção 2: Diabetes Tipo 1 e Tipo 2 -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'carbmonitor/images/tipos_de_diabetes.jpg' %}" class="img-fluid" alt="Tipos de diabetes">
+            </div>
+            <div class="col-md-6">
+                <h2>Tipos de Diabetes</h2>
+                <p><strong>Diabetes Tipo 1:</strong> Em pessoas com diabetes tipo 1, o pâncreas não produz insulina ou produz em quantidades insuficientes, necessitando de insulina externa para controlar a glicose no sangue. Para determinar a quantidade certa de insulina a ser aplicada, é essencial contar os carboidratos ingeridos.</p>
+                <p><strong>Diabetes Tipo 2:</strong> Pessoas com diabetes tipo 2 têm resistência à insulina. Para evitar picos de glicose, é crucial controlar a ingestão de carboidratos, mantendo uma quantidade consistente ao longo do dia.</p>
+            </div>
+        </div>
+        <!-- Seção 3: Importância da Contagem de Carboidratos -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>Importância da Contagem de Carboidratos</h2>
+                <p>A contagem de carboidratos é uma ferramenta útil para controlar os níveis de glicose no sangue. Conta-se as gramas de carboidratos em cada refeição e aplica-se a dose correta de insulina, conhecida como bolus alimentar. A relação insulina/carboidrato define quantos carboidratos uma unidade de insulina pode metabolizar. Esse fator é único para cada pessoa e deve ser definido com um médico especialista.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Relação insulina/carboidrato">
+            </div>
+        </div>
+        <!-- Seção 4: Porção do Alimento e Carboidratos Digeríveis -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>Porção do Alimento e Carboidratos Digeríveis</h2>
+                <p>A porção do alimento é a quantidade ingerida na refeição, geralmente medida em gramas, pedaços, fatias, etc. Carboidratos digeríveis são os carboidratos que podem ser digeridos, encontrados em tabelas nutricionais. Informações sobre carboidratos podem ser encontradas em tabelas nutricionais de produtos alimentícios. Para frutas e vegetais, ferramentas como a calculadora de carboidratos do site são úteis.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Porções de alimentos">
+            </div>
+        </div>
+        <!-- Seção 5: Referências -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2>Referências</h2>
+                <ul>
+                    <li><a href="https://diabetes.org/healthy-living/recipes-nutrition/understanding-carbs/carb-counting-and-diabetes" target="_blank">Carb Counting and Diabetes | ADA</a></li>
+                    <li><a href="http://www.tbca.net.br/index.html" target="_blank">TBCA - Tabela Brasileira de Composição de Alimentos</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

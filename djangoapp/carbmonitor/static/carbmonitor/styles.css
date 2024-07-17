@@ -1,0 +1,30 @@
+body {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p{
+    font-size: 20px;
+    line-height: 30px;
+    color: #414141;
+    margin-bottom: 30px;
+}
+
+h1,h2,h3,h4,h5{
+    font-size: 38px;
+    line-height: 45px;
+    color: #283891;
+    margin-bottom: 15px;
+}
+
+.card.all_img_hover {
+    transform: scale(1.0);
+    transition: transform 0.3s ease;
+}
+
+.card.all_img_hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

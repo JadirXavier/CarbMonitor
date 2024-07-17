@@ -5,46 +5,58 @@
 {% block body %}
 {% load static %}
     <div class="container mt-5">
-        <!-- Seção 1: Introdução -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <h2>Contagem de Carboidratos e Diabetes</h2>
-                <p>Carboidratos são nutrientes encontrados em alimentos como grãos, doces, amidos, legumes e laticínios. Quando ingerimos carboidratos, eles são convertidos em glicose, que entra na corrente sanguínea. Isso eleva o nível de glicose no sangue, e o corpo produz insulina para mantê-lo em níveis aceitáveis. Para pessoas com diabetes, esse processo é disfuncional.</p>
+        <div class="row gx-5 align-items-center">
+            <!-- Seção 1: Introdução -->
+            <div class="row mb-4">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                    <h2>Contagem de Carboidratos e Diabetes</h2>
+                    <p>Carboidratos são nutrientes encontrados em alimentos como grãos, doces, amidos, legumes e laticínios. Quando ingerimos carboidratos, eles são convertidos em glicose, que entra na corrente sanguínea. Isso eleva o nível de glicose no sangue, e o corpo produz insulina para mantê-lo em níveis aceitáveis. Para pessoas com diabetes, esse processo é disfuncional.</p>
+                </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                    <div class="card all_img_hover">
+                        <img src="{% static 'carbmonitor/images/alimentos_ricos_em_carboidratos.jpg' %}" class="img-fluid" alt="Alimentos ricos em carboidratos">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <link href="{% static 'carbmonitor/styles.css' %}" rel="stylesheet">
-                <img src="{% static 'carbmonitor/images/alimentos_ricos_em_carboidratos.jpg' %}" class="img-fluid" alt="Alimentos ricos em carboidratos">
+            <!-- Seção 2: Diabetes Tipo 1 e Tipo 2 -->
+            <div class="row mb-4">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                    <div class="card all_img_hover">
+                        <img src="{% static 'carbmonitor/images/tipos_de_diabetes.jpg' %}" class="img-fluid" alt="Tipos de diabetes">
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                    <h2>Tipos de Diabetes</h2>
+                    <p><strong>Diabetes Tipo 1:</strong> Em pessoas com diabetes tipo 1, o pâncreas não produz insulina ou produz em quantidades insuficientes, necessitando de insulina externa para controlar a glicose no sangue. Para determinar a quantidade certa de insulina a ser aplicada, é essencial contar os carboidratos ingeridos.</p>
+                    <p><strong>Diabetes Tipo 2:</strong> Pessoas com diabetes tipo 2 têm resistência à insulina. Para evitar picos de glicose, é crucial controlar a ingestão de carboidratos, mantendo uma quantidade consistente ao longo do dia.</p>
+                </div>
             </div>
         </div>
-        <!-- Seção 2: Diabetes Tipo 1 e Tipo 2 -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <img src="{% static 'carbmonitor/images/tipos_de_diabetes.jpg' %}" class="img-fluid" alt="Tipos de diabetes">
-            </div>
-            <div class="col-md-6">
-                <h2>Tipos de Diabetes</h2>
-                <p><strong>Diabetes Tipo 1:</strong> Em pessoas com diabetes tipo 1, o pâncreas não produz insulina ou produz em quantidades insuficientes, necessitando de insulina externa para controlar a glicose no sangue. Para determinar a quantidade certa de insulina a ser aplicada, é essencial contar os carboidratos ingeridos.</p>
-                <p><strong>Diabetes Tipo 2:</strong> Pessoas com diabetes tipo 2 têm resistência à insulina. Para evitar picos de glicose, é crucial controlar a ingestão de carboidratos, mantendo uma quantidade consistente ao longo do dia.</p>
-            </div>
-        </div>
+
         <!-- Seção 3: Importância da Contagem de Carboidratos -->
         <div class="row mb-4">
-            <div class="col-md-6">
+            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
                 <h2>Importância da Contagem de Carboidratos</h2>
                 <p>A contagem de carboidratos é uma ferramenta útil para controlar os níveis de glicose no sangue. Conta-se as gramas de carboidratos em cada refeição e aplica-se a dose correta de insulina, conhecida como bolus alimentar. A relação insulina/carboidrato define quantos carboidratos uma unidade de insulina pode metabolizar. Esse fator é único para cada pessoa e deve ser definido com um médico especialista.</p>
             </div>
-            <div class="col-md-6">
-                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Relação insulina/carboidrato">
+            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                <div class="card all_img_hover">
+                    <div class="card_img_under_text_box_img left-border-round">
+                        <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Relação insulina/carboidrato">
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Seção 4: Porção do Alimento e Carboidratos Digeríveis -->
         <div class="row mb-4">
-            <div class="col-md-6">
+            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
                 <h2>Porção do Alimento e Carboidratos Digeríveis</h2>
                 <p>A porção do alimento é a quantidade ingerida na refeição, geralmente medida em gramas, pedaços, fatias, etc. Carboidratos digeríveis são os carboidratos que podem ser digeridos, encontrados em tabelas nutricionais. Informações sobre carboidratos podem ser encontradas em tabelas nutricionais de produtos alimentícios. Para frutas e vegetais, ferramentas como a calculadora de carboidratos do site são úteis.</p>
             </div>
-            <div class="col-md-6">
-                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Porções de alimentos">
+            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                <div class="card all_img_hover">
+                    <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid" alt="Porções de alimentos">
+                </div>
             </div>
         </div>
         <!-- Seção 5: Referências -->

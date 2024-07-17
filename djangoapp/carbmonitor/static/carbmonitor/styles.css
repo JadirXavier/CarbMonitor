@@ -19,12 +19,7 @@ h1,h2,h3,h4,h5{
     margin-bottom: 15px;
 }
 
-.card.all_img_hover {
-    transform: scale(1.0);
-    transition: transform 0.3s ease;
-}
-
-.card.all_img_hover:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+.border-round {
+    border-radius: 12rem 12rem 12rem 12rem;
+    border: none;
 }

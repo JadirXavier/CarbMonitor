@@ -1,0 +1,14 @@
+{% extends "carbmonitor/layout.html" %}
+
+{% block title %}Criar usuário{% endblock %}
+
+{% block body %}
+{% load static %}
+    <h1>Criar usuário</h1>
+    <form class="form-validation" action ="registro/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+    </form>
+    <button>Criar usuário</button>
+    
+{% endblock %}

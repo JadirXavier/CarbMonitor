@@ -6,4 +6,5 @@ app_name = 'carbmonitor'
 urlpatterns = [
     path('', views.index, name='index'),
     path('calculadora', views.calculadora, name='calculadora'),
+    path('registro', views.registro, name='registro'),
 ]

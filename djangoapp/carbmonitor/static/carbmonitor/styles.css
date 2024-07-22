@@ -20,6 +20,27 @@ h1,h2,h3,h4,h5{
 }
 
 .border-round {
-    border-radius: 12rem 12rem 12rem 12rem;
+    border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
     border: none;
+    max-width: 80% !important;
+    max-height: 100%;
 }
+
+.text_body p {
+    text-align: justify;
+}
+
+@media (width < 1000px) {
+    .col-sm-4 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    border-radius: 2rem;
+  }

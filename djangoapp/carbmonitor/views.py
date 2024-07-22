@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, "carbmonitor/index.html")
+
+def calculadora(request):
+    return render(request, "carbmonitor/calculadora.html")

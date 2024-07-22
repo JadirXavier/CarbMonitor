@@ -8,45 +8,64 @@
         <div class="row gx-5 align-items-center justify-content-center">
             <!-- Seção 1: Introdução -->
             <div class="row mb-4">
-                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 text_body">
                     <h2>Contagem de Carboidratos e Diabetes</h2>
                     <p>Carboidratos são nutrientes encontrados em alimentos como grãos, doces, amidos, legumes e laticínios. Quando ingerimos carboidratos, eles são convertidos em glicose, que entra na corrente sanguínea. Isso eleva o nível de glicose no sangue, e o corpo produz insulina para mantê-lo em níveis aceitáveis. Para pessoas com diabetes, esse processo é disfuncional.</p>
                 </div>
-                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 d-flex justify-content-center align-items-center">
                     <img src="{% static 'carbmonitor/images/alimentos_ricos_em_carboidratos.jpg' %}" class="img-fluid border-round" alt="Alimentos ricos em carboidratos">
                 </div>
             </div>
             <!-- Seção 2: Diabetes Tipo 1 e Tipo 2 -->
             <div class="row mb-4">
-                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
-                    <img src="{% static 'carbmonitor/images/tipos_de_diabetes.jpg' %}" class="img-fluid border-round" alt="Tipos de diabetes">
-                </div>
-                <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 text_body">
                     <h2>Tipos de Diabetes</h2>
                     <p><strong>Diabetes Tipo 1:</strong> Em pessoas com diabetes tipo 1, o pâncreas não produz insulina ou produz em quantidades insuficientes, necessitando de insulina externa para controlar a glicose no sangue. Para determinar a quantidade certa de insulina a ser aplicada, é essencial contar os carboidratos ingeridos.</p>
                     <p><strong>Diabetes Tipo 2:</strong> Pessoas com diabetes tipo 2 têm resistência à insulina. Para evitar picos de glicose, é crucial controlar a ingestão de carboidratos, mantendo uma quantidade consistente ao longo do dia.</p>
                 </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 d-flex justify-content-center align-items-center">
+                    <img src="{% static 'carbmonitor/images/tipos_de_diabetes.jpg' %}" class="img-fluid border-round" alt="Alimentos ricos em carboidratos">
+                </div>
+                
             </div>
         </div>
-
-        <!-- Seção 3: Importância da Contagem de Carboidratos -->
-        <div class="row mb-4">
-            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
-                <h2>Importância da Contagem de Carboidratos</h2>
-                <p>A contagem de carboidratos é uma ferramenta útil para controlar os níveis de glicose no sangue. Conta-se as gramas de carboidratos em cada refeição e aplica-se a dose correta de insulina, conhecida como bolus alimentar. A relação insulina/carboidrato define quantos carboidratos uma unidade de insulina pode metabolizar. Esse fator é único para cada pessoa e deve ser definido com um médico especialista.</p>
+        <div class="row gx-5 align-items-center justify-content-center">
+            <!-- Seção 3: Importância da Contagem de Carboidratos -->
+            <div class="row mb-4">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 text_body">
+                    <h2>Importância da Contagem de Carboidratos</h2>
+                    <p>A contagem de carboidratos é uma ferramenta útil para controlar os níveis de glicose no sangue. Conta-se as gramas de carboidratos em cada refeição e aplica-se a dose correta de insulina, conhecida como bolus alimentar. A relação insulina/carboidrato define quantos carboidratos uma unidade de insulina pode metabolizar. Esse fator é único para cada pessoa e deve ser definido com um médico especialista.</p>
+                </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 d-flex justify-content-center align-items-center">
+                    <img src="{% static 'carbmonitor/images/tabela_nutricional.jpg' %}" class="img-fluid border-round" alt="Relação insulina/carboidrato">
+                </div>
             </div>
-            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
-                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid border-round" alt="Relação insulina/carboidrato">
-            </div>
-        </div>
-        <!-- Seção 4: Porção do Alimento e Carboidratos Digeríveis -->
-        <div class="row mb-4">
-            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
-                <h2>Porção do Alimento e Carboidratos Digeríveis</h2>
-                <p>A porção do alimento é a quantidade ingerida na refeição, geralmente medida em gramas, pedaços, fatias, etc. Carboidratos digeríveis são os carboidratos que podem ser digeridos, encontrados em tabelas nutricionais. Informações sobre carboidratos podem ser encontradas em tabelas nutricionais de produtos alimentícios. Para frutas e vegetais, ferramentas como a calculadora de carboidratos do site são úteis.</p>
-            </div>
-            <div class="col-sm-4 col-md-6 col-lg-6 mb-5">
-                <img src="{% static 'carbmonitor/images/imagem1.jpg' %}" class="img-fluid border-round" alt="Porções de alimentos">
+            <!-- Seção 4: Porção do Alimento e Carboidratos Digeríveis -->
+            <div class="row mb-4">
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 text_body">
+                    <h2>Porção do Alimento, Carboidratos Digeríveis e Relação Insulina/Carboidrato</h2>
+                    <p>A <strong>porção do alimento</strong> refere-se à quantidade consumida em uma refeição, podendo ser medida em gramas, pedaços, fatias, xícaras, entre outras unidades. Essa medida é crucial para determinar a quantidade exata de nutrientes que estão sendo ingeridos. Por exemplo, uma porção de 100 gramas de maçã pode ser diferente em termos de nutrientes de uma porção de 100 gramas de arroz.<br />
+                    <br />
+                    <strong>Carboidratos digeríveis</strong> são aqueles que podem ser metabolizados pelo corpo, fornecendo energia. Eles são encontrados em tabelas nutricionais dos alimentos. Compreender a quantidade de carboidratos digeríveis em cada porção de alimento é essencial para gerenciar dietas, especialmente para os diabéticos, que precisam monitorar sua ingestão de carboidratos para manter níveis saudáveis de glicose no sangue.<br />
+                    <br />
+                    A <strong>relação insulina/carboidrato</strong> é uma fórmula que indica quantos gramas de carboidratos podem ser metabolizados por uma unidade de insulina. Este valor é individual e pode variar de pessoa para pessoa, dependendo de fatores como idade, peso, sensibilidade à insulina e nível de atividade física.</p>
+                </div>
+                <div class="col-sm-4 col-md-6 col-lg-6 mb-5 text_body">
+                    <h2>Exemplo de Contagem de Carboidratos</h3>
+                    <p>
+                        Aqui está um exemplo de como contar os carboidratos de uma refeição simples: <strong>um pão francês com manteiga.</strong><br />
+                        <br />
+                        Primeiro, determine a <strong>porção do alimento</strong> que você vai consumir. Suponha que você tenha um pão francês que pesa 50 gramas e você está adicionando 10 gramas de manteiga. É importante pesar o alimento para obter uma medida precisa da quantidade que será consumida.<br />
+                        <br />
+                        Em seguida, encontre a quantidade de <strong>carboidratos digeríveis</strong> por porção. Verifique a tabela nutricional do pão francês e da manteiga. Se você não tiver acesso a uma tabela nutricional, pode consultar fontes confiáveis online ou usar aplicativos de nutrição. Para este exemplo, aproximadamente 50 gramas de pão francês contêm cerca de 27 gramas de carboidratos. A manteiga geralmente não contém carboidratos, mas é sempre bom verificar a tabela nutricional para confirmar.<br />
+                        <br />
+                        Depois de determinar a quantidade de carboidratos em cada porção, some os carboidratos das porções do pão e da manteiga. Neste caso, temos 27 gramas de carboidratos no pão francês e 0 gramas de carboidratos na manteiga, totalizando 27 gramas de carboidratos.<br />
+                        <br />
+                        Agora, aplique a <strong>relação insulina/carboidrato</strong> para calcular a quantidade de insulina necessária para metabolizar a refeição. Suponha que a sua relação insulina/carboidrato seja de 1 unidade de insulina para cada 10 gramas de carboidratos. Divida o total de carboidratos pela sua relação insulina/carboidrato para encontrar a quantidade de insulina necessária. No nosso exemplo, 27 gramas de carboidratos divididos por 10 resultam em <strong>2.7 unidades de insulina.</strong><br />
+                        <br />
+                        Lembre-se de que a relação insulina/carboidrato pode variar de pessoa para pessoa e deve ser discutida com um médico especialista para ser definida de maneira adequada.
+                    </p>
+                </div>
             </div>
         </div>
         <!-- Seção 5: Referências -->

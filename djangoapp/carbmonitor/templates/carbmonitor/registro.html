@@ -4,11 +4,14 @@
 
 {% block body %}
 {% load static %}
-    <h1>Criar usuário</h1>
-    <form class="form-validation" action ="registro/" method="POST">
-        {% csrf_token %}
-        {{ form }}
-    </form>
-    <button>Criar usuário</button>
-    
+    <div class="container mt-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <h2>Criar usuário</h2>
+            <form class="form-validation" action="registro/" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="form-submit">Criar usuário</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}

@@ -1,16 +1,16 @@
 {% extends "carbmonitor/layout.html" %}
 
-{% block title %}Criar usuário{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
 {% load static %}
     <div class="container mt-5">
         <div class="row gx-5 align-items-center justify-content-center">
-            <h2>Criar usuário</h2>
-            <form class="form-validation" action="registro" method="POST">
+            <h2>Login</h2>
+            <form class="form-validation" action="" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="form-submit">Criar usuário</button>
+                <button type="submit" class="form-submit">Login</button>
             </form>
         </div>
     </div>

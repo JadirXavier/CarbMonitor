@@ -17,12 +17,22 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'carbmonitor:calculadora' %}">Calculadora</a>
         </li>
-        <li class="nav-item">
+        {% if not user.is_authenticated %}
+          <li class="nav-item">
           <a class="nav-link" href="{% url 'carbmonitor:register' %}">Criar conta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'carbmonitor:login' %}">Login</a>
-        </li>
+          </li>
+        {% endif %}
+        {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'carbmonitor:login' %}">Login</a>
+          </li>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <form class="nav-item" action="{% url 'carbmonitor:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="nav-link" >Logout</button>
+          </form>
+        {% endif %}
       </ul>
     </div>
     

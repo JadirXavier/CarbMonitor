@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
+from .models import Refeicao
+from .forms import RefeicaoForm
 
 # Create your views here.
 
@@ -27,5 +29,12 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, "carbmonitor/login.html", {"form": form})
 
+def logout_view(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect("carbmonitor:index")
+    else:
+        return redirect("carbmonitor:index")
+        
 def calculadora(request):
     return render(request, "carbmonitor/calculadora.html")

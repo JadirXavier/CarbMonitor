@@ -7,10 +7,13 @@
     <div class="container mt-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <h2>Calculadora de Carboidratos</h2>
-            <form id="search-form" method="post">
+
+            <form class="input-group mb-3" id="search-form" method="post">
                 {% csrf_token %}
-                <input type="text" name="alimento-nome" id="alimento-nome" placeholder="Digite o nome do alimento">
-                <button type="submit">Buscar</button>
+                <input type="text" class="form-control" name="search-box" id="search-box" placeholder="Digite o nome do alimento" aria-label="Alimento à buscar" aria-describedby="Barra de busca" autocomplete="off">
+                <div class="input-group-append">
+                    <button style="border-radius: 0"class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
             </form>
 
             <div id="resultado-busca"></div>
@@ -18,7 +21,7 @@
             <script>
                 document.getElementById('search-form').addEventListener('submit', function (event) {
                     event.preventDefault();  
-                    const query = document.getElementById('alimento-nome').value;
+                    const query = document.getElementById('search-box').value;
                     buscarAlimento(query);
                 });
             
@@ -26,14 +29,20 @@
                     fetch(`/buscar-alimento/?q=${query}`, { method: 'GET' })
                         .then(response => response.json())
                         .then(data => {
-                            const alimentos = data.foods;
+                            const alimentos = data.alimentos;
                             const resultadoDiv = document.getElementById('resultado-busca');
                             resultadoDiv.innerHTML = '';  // Limpa o conteúdo anterior
+                            console.log(alimentos)
                             if (alimentos.length > 0) {
                                 const ul = document.createElement('ul');
                                 alimentos.forEach(alimento => {
                                     const li = document.createElement('li');
-                                    li.textContent = `${alimento.description} - ${alimento.brandOwner}`;
+                                    if (alimento.brandOwner){
+                                        li.textContent = `${alimento.description} - ${alimento.brandOwner}`;
+                                    } else {
+                                        li.textContent = `${alimento.description}`;
+                                    }
+                                    
                                     ul.appendChild(li);
                                 });
                                 resultadoDiv.appendChild(ul);

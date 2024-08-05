@@ -43,7 +43,6 @@ def logout_view(request):
     else:
         return redirect("carbmonitor:index")
 
-
 def buscar_alimento(request):
     print(settings.FOOD_API_KEY)
     if request.method == 'GET':

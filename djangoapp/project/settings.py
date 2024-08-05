@@ -38,7 +38,7 @@ ALLOWED_HOSTS = [
 
 # Food API_KEY
 
-FOOD_API_KEY = os.getenv('FOOD_API_KEY')
+FOOD_API_KEY = os.getenv('FOOD_API_KEY', "CHANGE-ME")
 
 # Application definition
 

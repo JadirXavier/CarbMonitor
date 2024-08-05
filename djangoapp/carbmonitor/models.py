@@ -3,9 +3,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
+
 class Refeicao(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
-    alimentos = models.ManyToManyField(Alimento, through='RefeicaoAlimento')
     horario = models.DateTimeField()
 
     def carboidratos_totais(self):

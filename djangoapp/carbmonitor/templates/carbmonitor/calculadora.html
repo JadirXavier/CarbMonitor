@@ -7,6 +7,43 @@
     <div class="container mt-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <h2>Calculadora de Carboidratos</h2>
+            <form id="search-form" method="post">
+                {% csrf_token %}
+                <input type="text" name="alimento-nome" id="alimento-nome" placeholder="Digite o nome do alimento">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div id="resultado-busca"></div>
+            
+            <script>
+                document.getElementById('search-form').addEventListener('submit', function (event) {
+                    event.preventDefault();  
+                    const query = document.getElementById('alimento-nome').value;
+                    buscarAlimento(query);
+                });
+            
+                function buscarAlimento(query) {
+                    fetch(`/buscar-alimento/?q=${query}`, { method: 'GET' })
+                        .then(response => response.json())
+                        .then(data => {
+                            const alimentos = data.foods;
+                            const resultadoDiv = document.getElementById('resultado-busca');
+                            resultadoDiv.innerHTML = '';  // Limpa o conteúdo anterior
+                            if (alimentos.length > 0) {
+                                const ul = document.createElement('ul');
+                                alimentos.forEach(alimento => {
+                                    const li = document.createElement('li');
+                                    li.textContent = `${alimento.description} - ${alimento.brandOwner}`;
+                                    ul.appendChild(li);
+                                });
+                                resultadoDiv.appendChild(ul);
+                            } else {
+                                resultadoDiv.textContent = 'Nenhum alimento encontrado.';
+                            }
+                        })
+                        .catch(error => console.error('Erro na busca:', error));
+                }
+            </script>
         </div>
     </div>
 

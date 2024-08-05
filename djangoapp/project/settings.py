@@ -36,6 +36,9 @@ ALLOWED_HOSTS = [
     host.strip()  for host in os.getenv('ALLOWED_HOSTS','').split(',') if host.strip()
 ]
 
+# Food API_KEY
+
+FOOD_API_KEY = os.getenv('FOOD_API_KEY')
 
 # Application definition
 

@@ -7,21 +7,25 @@
     <div class="container mt-5">
         <div class="row gx-5 align-items-center justify-content-center">
             <h2>Calculadora de Carboidratos</h2>
-
-            <form class="input-group mb-3" id="search-form" method="post">
-                {% csrf_token %}
-                <input type="text" class="form-control" name="search-box" id="search-box" placeholder="Digite o nome do alimento" aria-label="Alimento à buscar" aria-describedby="Barra de busca" autocomplete="off">
-                <div class="input-group-append">
-                    <button style="border-radius: 0"class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </form>
-
+            <div class="d-flex flex-column">
+                <form class="input-group mb-3" id="busca-alimento" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="form-control search-box" name="alimento" id="alimento" placeholder="Digite o nome do alimento" aria-label="Alimento à buscar" aria-describedby="Barra de busca" autocomplete="off">
+                    <div class="input-group-append">
+                        <button style="border-radius: 0"class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+                <ul class="input-group p-0 result-box" >
+                    <li>test1</li>
+                    <li>test2</li>
+                </ul>
+            </div>
             <div id="resultado-busca"></div>
             
             <script>
-                document.getElementById('search-form').addEventListener('submit', function (event) {
+                document.getElementById('busca-alimento').addEventListener('submit', function (event) {
                     event.preventDefault();  
-                    const query = document.getElementById('search-box').value;
+                    const query = document.getElementById('alimento').value;
                     buscarAlimento(query);
                 });
             

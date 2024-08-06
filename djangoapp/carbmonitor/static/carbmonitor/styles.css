@@ -43,6 +43,23 @@ h1,h2,h3,h4,h5{
     border-radius: 2rem;
   }
 
+.result-box li {
+    list-style: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.result-box li:hover {
+    background: #e9f3ff;
+    
+}
+
 
 @media (width < 1000px) {
     .col-sm-4 {

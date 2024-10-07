@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.http import JsonResponse
 from django.conf import settings
-from .models import Refeicao
+from .models import Refeicao, Alimento
 from .forms import RefeicaoForm
 import requests
 import logging
@@ -44,21 +44,20 @@ def logout_view(request):
         return redirect("carbmonitor:index")
 
 def buscar_alimento(request):
-    print(settings.FOOD_API_KEY)
     if request.method == 'GET':
-        query = request.GET.get('q')  # Obtém o nome do alimento da query string
-        api_key = settings.FOOD_API_KEY  # Substitua pela sua chave de API no arquivo settings.py
-        url = f"https://api.nal.usda.gov/fdc/v1/foods/search?api_key={api_key}&query={query}"
-        response = requests.get(url)
-        if response.status_code == 200:
-            data = response.json()
-            alimentos = data.get('foods', [])
-            for alimento in alimentos:
-                print(alimento['description'])
-            return JsonResponse({'alimentos': alimentos})
-        else:
-            return JsonResponse({'error': 'Erro na busca'})
-    return render(request, 'carbmonitor/calculadora.html')  
+        query = request.GET.get('query', '').strip()
+
+        if query:
+            alimentos = Alimento.objects.filter(nome__icontains=query)[:10]
+            
+
+            alimentos_data = alimentos.values('nome', 'carboidratos_totais_100g', 'carboidratos_disponiveis_100g')
+
+            return JsonResponse(list(alimentos_data), safe=False)
+
+        return JsonResponse([], safe=False)
+
+    return render(request, 'carbmonitor/calculadora.html') 
         
 def calculadora(request):
     return render(request, "carbmonitor/calculadora.html")

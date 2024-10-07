@@ -10,51 +10,50 @@
             <div class="d-flex flex-column">
                 <form class="input-group mb-3" id="busca-alimento" method="post">
                     {% csrf_token %}
-                    <input type="text" class="form-control search-box" name="alimento" id="alimento" placeholder="Digite o nome do alimento" aria-label="Alimento à buscar" aria-describedby="Barra de busca" autocomplete="off">
+                    <input type="text" class="form-control search-box" name="alimento" placeholder="Digite o nome do alimento" aria-label="Alimento à buscar" aria-describedby="Barra de busca" autocomplete="off">
                     <div class="input-group-append">
                         <button style="border-radius: 0"class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>
-                <ul class="input-group p-0 result-box" >
-                    <li>test1</li>
-                    <li>test2</li>
-                </ul>
+                <ul class="input-group p-0 result-box" ></ul>
             </div>
-            <div id="resultado-busca"></div>
             
             <script>
-                document.getElementById('busca-alimento').addEventListener('submit', function (event) {
-                    event.preventDefault();  
-                    const query = document.getElementById('alimento').value;
-                    buscarAlimento(query);
-                });
+                let debounceTimer;
+                const resultBox = document.querySelector(".result-box");
+                const searchBox = document.querySelector(".search-box");
             
-                function buscarAlimento(query) {
-                    fetch(`/buscar-alimento/?q=${query}`, { method: 'GET' })
-                        .then(response => response.json())
-                        .then(data => {
-                            const alimentos = data.alimentos;
-                            const resultadoDiv = document.getElementById('resultado-busca');
-                            resultadoDiv.innerHTML = '';  // Limpa o conteúdo anterior
-                            console.log(alimentos)
-                            if (alimentos.length > 0) {
-                                const ul = document.createElement('ul');
-                                alimentos.forEach(alimento => {
-                                    const li = document.createElement('li');
-                                    if (alimento.brandOwner){
-                                        li.textContent = `${alimento.description} - ${alimento.brandOwner}`;
-                                    } else {
-                                        li.textContent = `${alimento.description}`;
-                                    }
-                                    
-                                    ul.appendChild(li);
-                                });
-                                resultadoDiv.appendChild(ul);
-                            } else {
-                                resultadoDiv.textContent = 'Nenhum alimento encontrado.';
+                searchBox.onkeyup = () => {
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(buscaAlimento, 300);  // Delay de 300ms
+                };
+            
+                async function buscaAlimento() {
+                    const query = searchBox.value.trim();
+            
+                    if (query.length > 0) {
+                        const url = `/buscar_alimento?query=${query}`;
+                        try {
+                            const response = await fetch(url);
+                            if (!response.ok) {
+                                throw new Error('Problema na resposta');
                             }
-                        })
-                        .catch(error => console.error('Erro na busca:', error));
+                            const data = await response.json();
+                            
+                            // Exibe os resultados
+                            resultBox.innerHTML = '';
+                            data.forEach(item => {
+                                const li = document.createElement('li');
+                                li.textContent = `${item.nome} - ${item.carboidratos_totais_100g}g de carboidratos`;
+                                resultBox.appendChild(li);
+                            });
+            
+                        } catch (error) {
+                            console.error('Erro buscando dados:', error);
+                        }
+                    } else {
+                        resultBox.innerHTML = '';
+                    }
                 }
             </script>
         </div>

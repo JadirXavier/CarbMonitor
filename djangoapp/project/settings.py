@@ -36,9 +36,6 @@ ALLOWED_HOSTS = [
     host.strip()  for host in os.getenv('ALLOWED_HOSTS','').split(',') if host.strip()
 ]
 
-# Food API_KEY
-
-FOOD_API_KEY = os.getenv('FOOD_API_KEY', "CHANGE-ME")
 
 # Application definition
 
@@ -97,11 +94,11 @@ DATABASES = {
     }
 }
 
-try:
-    import socket
-    socket.gethostbyname('psql')
-except socket.gaierror:
-    DATABASES['default']['HOST'] = 'localhost'
+#try:
+#    import socket
+#    socket.gethostbyname('psql')
+#except socket.gaierror:
+#    DATABASES['default']['HOST'] = 'localhost'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

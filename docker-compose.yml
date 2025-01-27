@@ -1,14 +1,14 @@
 services:
   djangoapp:
-    container_name: djangoapp
+    container_name: django_project
     build:
       context: .
     ports:
       - 8000:8000
     volumes:
-      - ./djangoapp:/djangoapp
-      - ./data/web/static:/data/web/static/
-      - ./data/web/media:/data/web/media/
+      - ./django_project:/django_project
+      - ./django_project/static:/data/web/static/
+      - ./django_project/media:/data/web/media/
     env_file:
       - ./dotenv_files/.env
     depends_on:

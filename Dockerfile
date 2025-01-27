@@ -11,11 +11,11 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Copia a pasta "djangoapp" e "scripts" para dentro do container.
-COPY djangoapp /djangoapp
+COPY django_project /django_project
 COPY scripts /scripts
 
 # Entra na pasta djangoapp no container
-WORKDIR /djangoapp
+WORKDIR /django_project
 
 # A porta 8000 estará disponível para conexões externas ao container
 # É a porta que vamos usar para o Django.
@@ -29,12 +29,12 @@ EXPOSE 8000
 
 RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip && \
-  /venv/bin/pip install -r /djangoapp/requirements.txt && \
+  /venv/bin/pip install -r /django_project/requirements.txt && \
   adduser --disabled-password --no-create-home duser && \
   mkdir -p /data/web/static && \
   mkdir -p /data/web/media && \
-  chown -R duser:duser /venv /data /djangoapp /scripts && \
-  chmod -R 755 /data/web/static /data/web/media /djangoapp /scripts && \
+  chown -R duser:duser /venv /data /django_project /scripts && \
+  chmod -R 755 /data/web/static /data/web/media /django_project /scripts && \
   chmod +x /scripts/init_volumes.sh && \
   chmod +x /scripts/commands.sh
 

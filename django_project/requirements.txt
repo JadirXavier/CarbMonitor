@@ -4,3 +4,5 @@ python-dotenv>=0.19.1
 requests
 spacy 
 fuzzywuzzy
+django-cloudinary-storage
+cloudinary
